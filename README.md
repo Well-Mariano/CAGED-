@@ -42,12 +42,40 @@ Os códigos estão disponíveis em dois arquivos principais:
 #### Exemplo de uso
 
 ```r
-source("acesso_e_tratamento.R")
-dados <- tratar_caged("microdados.csv")
+# Tabela saldo por região
 
-source("visualizacao.R")
-gerar_graficos(dados)
-gerar_mapas(dados)
+tabela_br <- caged %>%
+  group_by(região) %>%
+  filter(região != "Desconhecido") %>%
+  summarise(saldo = sum(saldomovimentação, na.rm = T)) %>%
+  arrange(desc(saldo))
+
+Total_br <- tibble(
+  região = "Brasil",
+  saldo = sum(tabela_br$saldo, na.rm = T)
+)
+
+tabela_br <- bind_rows(tabela_br, Total_br)
+
+tabela_br %>%
+  mutate(
+    percentual = saldo / Total_br$saldo
+  ) %>%
+  gt() %>%
+  tab_header(
+    title = md("***Saldo por Região Brasileira***")
+  ) %>%
+  fmt_percent(
+    columns = percentual,
+    decimals = 2,
+    dec_mark = ",",
+    sep_mark = "."
+  ) %>%
+  cols_label(
+    região = "Região",
+    saldo = "Saldo",
+    percentual = "Participação"
+  )
 ```
 
 ## Estrutura do projeto
