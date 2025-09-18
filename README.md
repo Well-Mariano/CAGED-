@@ -6,10 +6,6 @@ Projeto para acesso, tratamento e visualização de microdados do CAGED utilizan
 
 Este projeto demonstra como acessar, tratar e gerar outputs a partir dos microdados do CAGED, facilitando o processo de análise e tomada de decisão para profissionais interessados no mercado de trabalho brasileiro.
 
-## Público-alvo
-
-Destinado a analistas de empregabilidade, profissionais de RH, pesquisadores e interessados em dados sobre o mercado de trabalho.
-
 ## Funcionalidades
 
 - **Acesso aos microdados do CAGED**  
@@ -28,7 +24,12 @@ Destinado a analistas de empregabilidade, profissionais de RH, pesquisadores e i
 ### 1. Instalação dos pacotes necessários
 
 ```
-install.packages(c("tidyverse", "sf", "ggplot2", "readr"))
+install.packages("archive")
+install.packages("readr")
+install.packages("tidyverse")
+install.packages("gt")
+install.packages("summarytools")
+install.packages("scales")
 ```
 
 ### 2. Execução dos scripts
