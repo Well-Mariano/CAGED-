@@ -94,7 +94,8 @@ tabela_br %>%
 
 Veja abaixo exemplos de outputs gerados pelo projeto:
 
-- **Tabela**: Exemplo_Tabela.png
+- **Tabela**:
+ ![Exemplo de Tabela](Exemplo_Tabela.png)
 - **Gráfico**: ![Gráfico de exemplo](exemplos/exemplo_grafico.png)
 - **Mapa**: ![Mapa de exemplo](exemplos/exemplo_mapa.png)
 
