@@ -108,6 +108,3 @@ Referências:
 - Ministério do Trabalho – CAGED  
 - Documentação oficial dos microdados
 
-## Licença
-
-Este projeto está sob a licença MIT.
